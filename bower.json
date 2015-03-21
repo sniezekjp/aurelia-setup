@@ -1,0 +1,25 @@
+{
+  "name": "aurelia-setup",
+  "version": "0.0.0",
+  "authors": [
+    "JP <jsniezek@crowdskout.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "aurelia-bootstrapper": "~0.9.5",
+    "aurelia-framework": "~0.8.8",
+    "aurelia-http-client": "~0.5.5",
+    "bluebird": "~2.9.14",
+    "es6-module-loader": "~0.15.0",
+    "jquery": "~2.1.3",
+    "system.js": "~0.15.0"
+  }
+}
