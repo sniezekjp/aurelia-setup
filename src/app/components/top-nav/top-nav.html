@@ -1,10 +1,7 @@
 <template>
   <ul>
-    <li repeat.for="row of router.navigation">
-      <a href.bind="row.href">${row.title}</a>
-    </li>
-    <li>
-      <a href="" click.delegate="logout()">Logout</a>
-    </li>
+    <li><a href="#/app/dashboard">Dashboard</a></li>
+    <li><a href="#/app/settings">Settings</a></li>
+    <li><a href="#/login">Login</a></li>
   </ul>
 </template>

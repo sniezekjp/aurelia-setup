@@ -1,5 +1,6 @@
 import {LogManager} from 'aurelia-framework';
 import {ConsoleAppender} from 'aurelia-logging-console';
+import $ from 'jquery';
 
 LogManager.addAppender(new ConsoleAppender());
 LogManager.setLevel(LogManager.levels.info);

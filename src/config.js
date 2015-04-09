@@ -21,6 +21,7 @@ System.config({
     "aurelia-templating-router": "vendor/aurelia-templating-router/dist/amd/index",
     "aurelia-task-queue": "vendor/aurelia-task-queue/dist/amd/index",
     "aurelia-http-client": "vendor/aurelia-http-client/dist/amd/index",
+    "materialize": "vendor/materialize/dist/js/materialize",
     "core-js": "vendor/core-js/index",
     "bluebird": "vendor/bluebird/js/browser/bluebird",
     "jquery": "vendor/jquery/dist/jquery",

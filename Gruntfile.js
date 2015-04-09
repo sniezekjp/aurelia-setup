@@ -28,15 +28,24 @@ module.exports = function(grunt) {
     watch: {
       es: {
         files: ['src/app/**'],
-        tasks: ['dev']
+        tasks: ['dev'],
+        options: {
+          livereload: 1337
+        }
       },
       src: {
         files: ['Gruntfile.js'],
-        tasks: ['dev']
+        tasks: ['dev'],
+        options: {
+          livereload: true
+        }
       },
       scss: {
         files: ['src/assets/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['sass'],
+        options: {
+          livereload: true
+        }
       }
     },
     // Copy tasks
@@ -70,6 +79,14 @@ module.exports = function(grunt) {
           src: 'src/config.js',
           dest: 'dist/config.js'
         }]
+      },
+      theme: {
+        files: [{
+          expand: true,
+          cwd: 'src/assets',
+          src: ['theme/**','fonts/**'],
+          dest: 'dist/assets'
+        }]
       }
     },
     // Sass tasks
@@ -94,6 +111,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-newer');
 
-  grunt.registerTask("dev", ["newer:babel", "newer:copy"]);
+  grunt.registerTask("dev", ["newer:babel", "newer:copy", "sass"]);
   grunt.registerTask("default", ["dev", "watch"]);
 }

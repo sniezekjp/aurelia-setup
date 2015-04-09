@@ -1,9 +1,5 @@
 <template>
-  <h2>Welcome to the app</h2>
-  <ul>
-    <li repeat.for="item of router.navigation">
-      <a href.bind="item.href">${item.title}</a>
-    </li>
-  </ul>
+  <import from="components/top-nav/top-nav"></import>
+  <top-nav></top-nav>
   <router-view></router-view>
 </template>

@@ -1,5 +1,10 @@
 <template>
-  <import from="components/top-nav/top-nav"></import>
-  <top-nav router.bind="router"></top-nav>
-  <router-view></router-view>
+  <div>
+    <ul>
+      <li repeat.for="item of router.navigation">
+        <a href.bind="item.href">${item.title}</a>
+      </li>
+    </ul>
+    <router-view></router-view>
+  </div>
 </template>

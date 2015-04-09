@@ -1,4 +1,5 @@
 import {Router} from 'aurelia-router';
+import AuthPipeline from 'services/auth/AuthPipeline';
 
 export class Main {
   
@@ -6,13 +7,23 @@ export class Main {
   
   constructor(router) {
     this.router = router;
+    
     this.router.configure(config => {
-      config.title = 'Aurelia';
+      
+      config.addPipelineStep('authorize', AuthPipeline);
+      
+      config.title = 'App';
+      
       config.map([
-        { route: ['app'], moduleId: 'modules/app/app', nav: true },
-        { route: 'login', moduleId: 'modules/login/login', nav: true },
         { route: '', redirect: 'app' }
       ]);
+
+      config.mapUnknownRoutes((instruction)=> {
+        instruction.fragment = instruction.fragment || 'dashboard';
+        if(instruction.fragment.indexOf('app') !== -1) {
+          instruction.config.moduleId = `modules/${instruction.fragment}/${instruction.fragment}`;
+        }
+      });
     });
   }
 }
